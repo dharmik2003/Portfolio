@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <style>
+        .wrapper {
+  position: relative;
+  perspective: 40em;
+  display: grid;
+  transform-style: preserve-3d;
+}
+
+.card {
+  grid-area: 1 / 1;
+  height: 248px;
+    width: 402px;
+  transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+  background: #699dc9;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 60px;
+  font-weight: 900;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 30px -3px rgba(0,0,0,.1);
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 900;
+}
+
+.card .enclosed {
+    background: #1e5889;
+    line-height: 1;
+    color: rgb(255 255 255);
+    padding: 0 5px;
+    display: inline-block;
+    transform: translate(-1px, 1px) scale(0.75);
+    transform-origin: right center;
+}
+
+.wrapper:before {
+  --bw: 9px;
+  grid-area: 1 / 1;
+  content: '';
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  margin-top: calc(-1 * var(--bw));
+  margin-left: calc(-1 * var(--bw));
+  background: transparent;
+  transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+  pointer-events: none;
+  border: var(--bw) solid #1e5889;
+  box-sizing: content-box;
+}
+
+
+.wrapper:hover > div,
+.wrapper:hover:before {
+  transform: none;  
+}
+
+
+.wrapper > div,
+.wrapper:before {
+  will-change: transform;
+  transition: .3s transform cubic-bezier(.25,.46,.45,1);
+}
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin: 0px;
+  background:linear-gradient(to bottom right, #d6d8e4 15%, transparent),
+    radial-gradient(circle at 100% 0%, rgba(255,255,255,.2) 10%, transparent 20%) center center / 15px 15px,
+    linear-gradient(to bottom right, #b2baf9, #57ADD8);
+}
+
+li.in {
+    font-size: 16px;
+    color: #1c5280;
+    padding: 5px;
+    list-style: square;
+}
+
+.skillul{
+    display: none;
+}
+.wrapper:hover .skillul{
+    display: block;
+    padding: 10px 47px;
+    border-radius: 9px;
+    margin: 10px;
+}
+h1{
+    margin: 0px;
+}
+.btn{
+    list-style: none !important;
+    border: 1px solid #1e5889;
+    width: max-content;
+    background: #1e5889;
+    font-style: initial;
+    margin-top: 12px;
+    justify-content: center;
+    padding: 7px;
+    border-radius: 7px;
+}
+.a-link{
+    color: white;
+    text-decoration: unset;
+    font-weight: 100;
+}
+     
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card">
+          <h1>
+            <span class="enclosed">Skills</span>
+            <ul class="skillul">
+                <li class="in">HTML , CSS & Basic JAVA Script</li>
+                <li class="in">Git & GitHub</li>
+                <li class="in">Basic Python</li>
+                <li class="in">Java</li>
+                <li class="in">Basic C++</li>
+                <li class="in btn"><a href="index.html"class="a-link">Back To Home</a></li>
+            </ul>
+            
+          </h1>
+        </div>
+      </div>
+</body>
+</html>
